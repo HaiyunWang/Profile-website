@@ -3,7 +3,7 @@ var d2 = document.getElementById('section2');
 var d3 = document.getElementById('section3');
 var d4 = document.getElementById('section4');
 var d5 = document.getElementById('section5');
-var photo = document.getElementById('photo');
+var photo = document.querySelector('.photo');
 var introduction = document.querySelector('.introduction');
 var year1 = document.getElementsByClassName('year')[0];
 var year2 = document.getElementsByClassName('year')[1];
@@ -43,9 +43,9 @@ window.addEventListener('scroll',function(){
     Icon2.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
     Icon3.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
     Icon4.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
-    fixedElement(h,viewportHeight,d2);
-    fixedElement(h,6*viewportHeight,d3);
-    fixedElement(h,8*viewportHeight,d4);
+    fixedElement(h,viewportHeight,d2,100,'vh');
+    fixedElement(h,6*viewportHeight,d3,600,'vh');
+    fixedElement(h,8*viewportHeight,d4,800,'vh');
 });
 //anime update
 function updateStyle(h,start,end,valueStart,valueEnd,suffix){
@@ -63,14 +63,16 @@ function updateStyle(h,start,end,valueStart,valueEnd,suffix){
     }
 }
 //fixed divs
-function fixedElement(h,animeStart,element){
+function fixedElement(h,animeStart,element,elementTop,suffix){
     // small than start: 
     //bigger/equal start:fixed
     if(h<animeStart){
         element.style.position = 'absolute';
+        element.style.top = elementTop.toString()+suffix;
     }else{
         element.style.position = 'fixed';
-        element.style.top = '0'
+        element.style.top = '0';
     }
+    console.log(animeStart)
 }
 
