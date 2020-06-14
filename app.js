@@ -31,7 +31,7 @@ window.addEventListener('scroll',function(){
     var h = window.scrollY;
     photo.style.opacity = updateStyle(h,0,viewportHeight,10,100,'%');
     photo.style.borderRadius = updateStyle(h,viewportHeight,2*viewportHeight,0,50,'%');
-    photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,35,25,'vw');
+    photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,50,25,'vw');
     photo.style.transform = `translateX(${updateStyle(h,2*viewportHeight,3*viewportHeight,0,60,'%')})`;
     introduction.style.opacity = updateStyle(h,2*viewportHeight,3*viewportHeight,0,100,'%');
     year1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,-200,0,'%')})`;
