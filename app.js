@@ -33,8 +33,13 @@ window.onresize = resize;
 function resize(){
     viewportHeight = window.innerHeight;
     viewportWidth = window.innerWidth;
+    if(viewportWidth<=750){
+        showCards(cardIndex);
+    }else{
+        cards[0].style.display='block';
+        cards[1].style.display = 'block';
+    }
 }
-showCards(cardIndex);
 //scroll event;
 window.addEventListener('scroll',function(){
     var h = window.scrollY;
