@@ -26,24 +26,10 @@
     </div>
     <div class="snap backgroundInfo" style="top:600vh;" id='section3'>
         <div class="timeline">
-            <!-- <div class = container>
-                <div class="left">
+            <div class="container left">
+                <div class="yearInfo">
                     <p class="year">2017 - Melbourne</p>
                 </div>
-                <div class="right">
-                    <p class="info">La Trobe University, Bachelor of Arts</p>
-                </div>
-            </div>   
-            <div class = container>
-                <div class="left">
-                    <p class="year">2018 - Melbourne</p>
-                </div>
-                <div class="right">
-                    <p class="info">RMIT University, Master of Public Arts</p>
-                </div>
-            </div>    -->
-            <div class="container left">
-                <p class="year">2017 - Melbourne</p>
             </div>
             <div class="info-container right">
                 <div class="concept">
@@ -51,7 +37,9 @@
                 </div>
             </div>
             <div class="container left">
-                <p class="year">2018 - Melbourne</p>
+                <div class="yearInfo">
+                    <p class="year">2018 - Melbourne</p>
+                </div>
             </div>
             <div class="info-container right">
                 <div class="concept">
@@ -60,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="snap skill-container" style="top:800vh;" id='section4'>
+    <div class="snap skill-container" style="top:900vh;" id='section4'>
         <div class="skill">
             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="html5" class="skillIcons" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path class= 'iconColor'fill="currentColor" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"></path></svg>
             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="css3-alt" class="skillIcons" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path class = 'iconColor'fill="iconColor" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2.1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"></path></svg>
@@ -68,9 +56,9 @@
             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="vuejs" class="skillIcons" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path class="iconColor" fill="iconColor" d="M356.9 64.3H280l-56 88.6-48-88.6H0L224 448 448 64.3h-91.1zm-301.2 32h53.8L224 294.5 338.4 96.3h53.8L224 384.5 55.7 96.3z"></path></svg>
         </div>
     </div>
-    <div class="snap project-container"style='top:1000vh;' id='section5'>
+    <div class="snap project-container"style='top:1300vh;' id='section5'>
         <div class="card-container">
-            <div class="card">
+            <div class="card" id='card1'>
                 <a href="https://redesignwebsite.netlify.app">
                     <img class="projectImg" src="./images/redesign.png" alt="redesign website">
                 </a>   
@@ -81,7 +69,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card card2">
+            <div class="card" id='card2'>
                 <a href="https://wikipedia-app.netlify.app">
                     <img class="projectImg" src="./images/wiki.png" alt="wikipedia-app">
                 </a>   
@@ -94,16 +82,16 @@
                 </div>
             </div>
             <div class="changeBtn">
-                <a id="prev">
+                <a id="prev" onclick="changeCard(-1)">
                     <div class="arrow"></div>
                  </a>
-                 <a id="next">
+                 <a id="next" onclick="changeCard(1)">
                      <div class="arrow arrow2"></div>
                  </a>
             </div>
         </div>
     </div>
-    <div class="snap contact" style="top:1200vh"id='section6'>
+    <div class="snap contact" style="top:1600vh"id='section6'>
         <p class="title">Contact</p>
         <div class="contact-message">
             <p>I'm currently looking for new opportunties.
@@ -112,7 +100,7 @@
             </p>
         </div>
     </div>
-    <footer>
+    <footer style="position: absolute; top: 1900vh;" id='footer'>
         <a href="about.html">About</a>
     </footer>
     <script src="app.js"></script>

@@ -24,36 +24,26 @@ var d3Top = 6*viewportHeight;
 var d4Top = 8*viewportHeight;
 var d5Top = 10*viewportHeight;
 var d6Top = 12*viewportHeight;
+var card1 = document.getElementById('card1');
+var card2 = document.getElementById('card2');
+var cards = document.getElementsByClassName('card');
+var cardIndex= 1;
 //resize event
 window.onresize = resize;
 function resize(){
     viewportHeight = window.innerHeight;
     viewportWidth = window.innerWidth;
 }
+showCards(cardIndex);
 //scroll event;
 window.addEventListener('scroll',function(){
     var h = window.scrollY;
-    photo.style.opacity = updateStyle(h,0,viewportHeight,10,100,'%');
-    photo.style.borderRadius = updateStyle(h,viewportHeight,2*viewportHeight,0,50,'%');
-    photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
-    photo.style.height = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
-    photo.style.transform = `translateX(${updateStyle(h,2*viewportHeight,3*viewportHeight,0,-80,'%')})`;
-    introduction.style.opacity = updateStyle(h,2*viewportHeight,3*viewportHeight,0,100,'%');
-    year1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,-100,0,'%')})`;
-    info1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,100,0,'%')})`;
-    year2.style.transform = `translateX(${updateStyle(h,6*viewportHeight,6.5*viewportHeight,-100,0,'%')})`;
-    info2.style.transform = `translateX(${updateStyle(h,6*viewportHeight,6.5*viewportHeight,100,0,'%')})`;
-    Icon1.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
-    Icon2.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
-    Icon3.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
-    Icon4.style.opacity = updateStyle(h,7.5*viewportHeight,8*viewportHeight,0,50,'%');
-    title.style.opacity = updateStyle(h,11*viewportHeight,12*viewportHeight,0,100,'%');
-    message1.style.opacity = updateStyle(h,12*viewportHeight,13.5*viewportHeight,0,100,'%');
+    resizeAninmation(h);
     fixedElement(h,viewportHeight,d2,100,'vh');
     fixedElement(h,6*viewportHeight,d3,600,'vh');
-    fixedElement(h,8*viewportHeight,d4,800,'vh');
-    fixedElement(h,10*viewportHeight,d5,1000,'vh');
-    fixedElement(h,12*viewportHeight,d6,1200,'vh');
+    fixedElement(h,9*viewportHeight,d4,900,'vh');
+    fixedElement(h,13*viewportHeight,d5,1300,'vh');
+    fixedElement(h,16*viewportHeight,d6,1600,'vh');
 });
 //anime update
 function updateStyle(h,start,end,valueStart,valueEnd,suffix){
@@ -82,4 +72,55 @@ function fixedElement(h,animeStart,element,elementTop,suffix){
         element.style.top = '0';
     }
 }
-
+function resizeAninmation(h){
+    if(viewportWidth<=750){
+        photo.style.opacity = updateStyle(h,0,viewportHeight,10,100,'%');
+        photo.style.borderRadius = updateStyle(h,viewportHeight,2*viewportHeight,0,50,'%');
+        photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
+        photo.style.height = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
+        introduction.style.opacity = updateStyle(h,2*viewportHeight,3*viewportHeight,0,100,'%');
+        photo.style.transform = `translateY(${updateStyle(h,2*viewportHeight,3*viewportHeight,0,-60,'%')})`;
+        year1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,100,0,'vh')})`;
+        info1.style.transform = `translateX(${updateStyle(h,6*viewportHeight,6.5*viewportHeight,100,0,'vw')})`;
+        year2.style.transform = `translateX(${updateStyle(h,6.5*viewportHeight,7*viewportHeight,100,0,'vh')})`;
+        info2.style.transform = `translateX(${updateStyle(h,7*viewportHeight,7.5*viewportHeight,100,0,'vw')})`;
+        Icon1.style.opacity = updateStyle(h,8*viewportHeight,8.5*viewportHeight,0,100,'%');
+        Icon2.style.opacity = updateStyle(h,8.6*viewportHeight,9*viewportHeight,0,100,'%');
+        Icon3.style.opacity = updateStyle(h,9*viewportHeight,9.5*viewportHeight,0,100,'%');
+        Icon4.style.opacity = updateStyle(h,9.5*viewportHeight,10*viewportHeight,0,100,'%');
+        title.style.opacity = updateStyle(h,15*viewportHeight,16*viewportHeight,0,100,'%');
+        message1.style.opacity = updateStyle(h,16.2*viewportHeight,16.8*viewportHeight,0,100,'%');
+    }else{
+        photo.style.opacity = updateStyle(h,0,viewportHeight,10,100,'%');
+        photo.style.borderRadius = updateStyle(h,viewportHeight,2*viewportHeight,0,50,'%');
+        photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
+        photo.style.height = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
+        photo.style.transform = `translateX(${updateStyle(h,2*viewportHeight,3*viewportHeight,0,-80,'%')})`;
+        introduction.style.opacity = updateStyle(h,2*viewportHeight,3*viewportHeight,0,100,'%');
+        year1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,-100,0,'vw')})`;
+        info1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,100,0,'vw')})`;
+        year2.style.transform = `translateX(${updateStyle(h,6*viewportHeight,7*viewportHeight,-100,0,'vw')})`;
+        info2.style.transform = `translateX(${updateStyle(h,6*viewportHeight,7*viewportHeight,100,0,'vw')})`;
+        Icon1.style.opacity = updateStyle(h,8*viewportHeight,9.5*viewportHeight,0,100,'%');
+        Icon2.style.opacity = updateStyle(h,8*viewportHeight,9.5*viewportHeight,0,100,'%');
+        Icon3.style.opacity = updateStyle(h,8*viewportHeight,9.5*viewportHeight,0,100,'%');
+        Icon4.style.opacity = updateStyle(h,8*viewportHeight,9.5*viewportHeight,0,100,'%');
+        title.style.opacity = updateStyle(h,15*viewportHeight,16*viewportHeight,0,100,'%');
+        message1.style.opacity = updateStyle(h,16.2*viewportHeight,16.8*viewportHeight,0,100,'%');
+    }
+}
+function changeCard(n){
+    showCards(cardIndex+=n);
+}
+function showCards(n){
+    if(n>cards.length){
+        cardIndex = 1;
+    }
+    if(n<1){
+        cardIndex = cards.length;
+    }
+    for(var i = 0; i<cards.length; i++){
+        cards[i].style.display = 'none';
+    }
+    cards[cardIndex-1].style.display = 'block';
+}
