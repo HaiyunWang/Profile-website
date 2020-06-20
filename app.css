@@ -12,6 +12,23 @@ body,html{
     width: 100vw;
     position: absolute;
 }
+.text{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    background-color: #ececec;
+    color: black;
+    font-size: 10vw;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 10px;
+    width: 70%;
+    mix-blend-mode: screen;
+    text-align: center;
+    z-index: 1;
+}
 .video{
     display: flex;
     object-fit: cover;
@@ -22,22 +39,29 @@ body,html{
     align-items: center;
     justify-content: center;
 }
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 .photo{
     object-fit: cover;
-    width: 50vw;
+    width: 100vh;
+    height:100vh;
 }
 .introduction{
     display: block;
-    width: 30vw; 
-    font-size: 1.5em;
-    overflow-wrap: break-word;/*this is to break word to avoid the textflow outside the container*/
+    width: 40vw; 
+    font-size: 2em;
     line-height: 1.5;
     color: #ececec;
-    top: 22%;
-    left: 10%;
     position: absolute;
-    transform: translate(35%, -10%);
     z-index: -1;
+    transform:translateX(45%);
+    white-space: pre-line;
 }
 .mail{
     color:#ff926b;
@@ -51,22 +75,21 @@ body,html{
     justify-content: center;
     color: #ececec;
 }
-.GradIcon{
-    width: 1.6em;
-    padding-top: 20px;
+.gradIcon{
+    width:1.6em;
+    height:1.6em;
 }
 .iconColor{
     fill:#ececec;
-}
-.year{
-    font-size: 1.6em;
-    transform: translateX(-200%);
 }
 .timeline{
     position: relative;
     margin: 0 auto;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .timeline::after{
     content: '';
@@ -79,35 +102,50 @@ body,html{
 }
 .container,.info-container{
     position: relative;
-    padding: 10px 20px;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6em;
     text-align: center;
-}
-.container{
-    left: 0;
-}
-.info-container{
-    width: 50%;
-    font-size: 1.5em;
-    left: 50%;
-    top: -16%;
+    margin-top: 50px;
 }
 .container::after{
-    content: '';
+    content:'';
     position: absolute;
-    width: 2em;
-    height:2em;
     z-index: 1;
-    background-color: #ececec;
     border-radius: 50%;
     border: 3px solid #f2a365;
-    right: -27px;
-    top: 0;
+    width: 2em;
+    height: 2em;
+    right: -36px;
+    top: 10px;
+    background-color: #ececec;
+}
+.left{
+    left: 0;
+}
+.right{
+    left: 50%;
+}
+.concept{
+    width: 388px;
+    display: inline-block;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+
+}
+.info{
+    margin-left: 50px;
+    text-align: left;
+}
+.year{
+    transform: translateX(-100%);
+}
+.info{
+    transform: translateX(100%);
 }
 
-.info{
-    transform: translateX(200%);
-}
+
 .skill-container{
     background-color: #222831;
     display: flex;
@@ -119,33 +157,24 @@ body,html{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
 }
 .skillIcons{
     width: 6em;
     margin: 90px;
     opacity: 0;
 }
-.credit{
-    margin: 10px 90px;
-    font-size: 2.5em;
-    width: 100%;
-    color: #ececec;
-    opacity: 0;
-    text-align: left;
-}
-.credit a{
-    text-decoration: none;
-    color:#f2a365;
-}
 .project-container{
     background-color: #30475e;
     display: flex;
     perspective: 5000px;
+    align-items: center;
+    justify-content: center;
 }
 .card-container{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .card{
@@ -172,4 +201,142 @@ body,html{
     color: #ececec;
     object-fit: contain;
 }
+.changeBtn{
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#next,#prev{
+    cursor: pointer;
+    top: 50%;
+    margin-top: -22px;
+    color:#ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+} 
+.arrow,.arrow::before{
+  position: absolute;
+  left: 50%;
+}
+.arrow{
+    width:30px;
+    height: 30px;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    border-right: 2px #ececec solid;
+    border-bottom: 2px #ececec solid;
+}
+.arrow2{
+    transform: rotate(-45deg);
+}
+.arrow::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px #ececec solid;
+    border-bottom: 1px #ececec solid;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: arrow;
+}
+@keyframes arrow{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-10px, -10px);
+    }
+}
 
+.contact{
+    background-color: #222831;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.title{
+    font-size: 2.5em;
+    color: #ececec;
+    opacity: 0;
+}
+.contact-message{
+    font-size: 1.6em;
+    text-align: center;
+    color: #ececec;
+    opacity: 0;
+}
+.contact-message a{
+    text-decoration: none;
+    color: #f2a365;
+}
+footer{
+    padding: 20px;
+    top: 1600vh;
+    position: absolute;
+    font-size: 1.6em;
+    background-color: #30475e;
+    width: 100vw;
+}
+footer a{
+    color: #ececec;
+    text-decoration: none;
+    margin: 10px;
+}
+@media only screen and (max-width:750px){
+    .introduction{
+        transform:translate(20%,40%);
+        min-width:338px;
+    }
+    .timeline::after{
+        Left:31px;
+        width:10px;
+    }
+    .container,.info-container{
+        width:calc(100% - 41px);
+        margin-top:50px;
+        margin-left:15px;
+    }
+    .container::after{
+        left:-6px;
+    }
+    .right{
+        left:0
+    }
+    .concept{
+        width:calc(100% - 41px);
+        overflow-wrap:break-word;
+    }
+    .skillIcons{
+        margin:20px;
+    }
+    .skill{
+        flex-direction:column;
+    }
+    .card{
+        width: 80%;
+        margin: 0;
+    }
+    .card-container{
+        flex-direction: column;
+    }
+    .card2{
+        display: none;
+    }
+    .changeBtn{
+        display: flex;
+        margin-top: 30px;
+    }
+
+}
