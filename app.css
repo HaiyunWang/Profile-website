@@ -337,7 +337,6 @@ footer a{
 .card{
     width: 80%;
     margin: 0;
-    display: none;
 }
 .card-container{
     flex-direction: column;
