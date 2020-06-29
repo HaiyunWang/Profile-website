@@ -62,6 +62,7 @@ function updateStyle(h,start,end,valueStart,valueEnd,suffix){
         var pos = h - start;
         var percentage = pos*process/scrollRange+valueStart;
         str = `${Math.round(percentage)}`+suffix;
+        console.log('current'+str)
         return str;
     }
 }
@@ -79,11 +80,11 @@ function fixedElement(h,animeStart,element,elementTop,suffix){
 }
 function resizeAninmation(h){
     if(viewportWidth<=750){
-        photo.style.opacity = updateStyle(h,0,viewportHeight,10,100,'%');
+        photo.style.opacity = updateStyle(h,0,viewportHeight,0.1,1,'%');
         photo.style.borderRadius = updateStyle(h,viewportHeight,2*viewportHeight,0,50,'%');
         photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
         photo.style.height = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
-        introduction.style.opacity = updateStyle(h,2*viewportHeight,3*viewportHeight,0,100,'%');
+        introduction.style.opacity = updateStyle(h,2*viewportHeight,3*viewportHeight,0,1,'%');
         photo.style.transform = `translateY(${updateStyle(h,2*viewportHeight,3*viewportHeight,0,-60,'%')})`;
         year1.style.transform = `translateX(${updateStyle(h,4*viewportHeight,6*viewportHeight,100,0,'vh')})`;
         info1.style.transform = `translateX(${updateStyle(h,6*viewportHeight,6.5*viewportHeight,100,0,'vw')})`;
