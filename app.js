@@ -80,7 +80,7 @@ function fixedElement(h,animeStart,element,elementTop,suffix){
 }
 function resizeAninmation(h){
     if(viewportWidth<=750){
-        photo.style.opacity = updateStyle(h,0,viewportHeight,0.1,1,'%');
+        photo.style.opacity = updateStyle(h,0,viewportHeight,10,100,'%');
         photo.style.borderRadius = updateStyle(h,viewportHeight,2*viewportHeight,0,50,'%');
         photo.style.width = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
         photo.style.height = updateStyle(h,viewportHeight,2*viewportHeight,100,35,'vh');
