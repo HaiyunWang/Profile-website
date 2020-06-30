@@ -7,6 +7,7 @@ body,html{
     padding: 0;
     overflow-x: hidden;
     overflow-y: scroll;
+    height: 100%;
 }
 .snap{
     height: 100vh;
