@@ -1,13 +1,13 @@
 *{
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
-    height: 100%;
 }
 body,html{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     overflow-y: scroll;
+    height: 100%;
 }
 body > div {
     /* transform: translate3d(0,0,0);
