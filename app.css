@@ -1,9 +1,9 @@
 *{
     box-sizing: border-box;
-}
-body,html{
     margin: 0;
     padding: 0;
+}
+body,html{
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -349,6 +349,7 @@ body > div {
     text-align: center;
     color: #ececec;
     opacity: 0;
+    margin-top: 30px;
 }
 .contact-message a{
     text-decoration: none;
@@ -367,7 +368,7 @@ footer a{
 }
 @media only screen and (max-width:750px){
 .introduction{
-    transform:translate(20%,40%);
+    transform:translate(20%,50%);
     min-width:338px;
     line-height: 1.3;
 }
