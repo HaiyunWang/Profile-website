@@ -38,6 +38,7 @@ body > div {
     top: 50%;
     position: absolute;
     transform-style: preserve-3d;
+    background-color: #f2a365;
     transform: rotateX(240deg) rotateY(-5deg) rotateZ(-155deg);
     -webkit-transform:rotateX(240deg) rotateY(-5deg) rotateZ(-155deg);
     -moz-transform:rotateX(240deg) rotateY(-5deg) rotateZ(-155deg);
@@ -111,7 +112,6 @@ body > div {
     left: 0;
     position: absolute;
     border-radius: 10%;
-    background-color: #f2a365;
   }
 .topSide{
     transform: translateZ(-5em);
@@ -463,6 +463,8 @@ footer a{
 .yearInfo{
     position: relative;
     overflow: hidden;
+    text-align: left;
+    margin-left: 30px;
 }
 .year{
     transform: translateX(100vw);
