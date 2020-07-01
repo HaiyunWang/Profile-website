@@ -130,3 +130,7 @@ function showCards(n){
     }
     cards[cardIndex-1].style.display = 'block';
 }
+window.addEventListener('load',()=>{
+    var preload = document.querySelector('.preload');
+    preload.classList.add('preload-finish');
+})
