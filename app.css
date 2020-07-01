@@ -53,12 +53,15 @@ body > div {
     }
   }
   @-webkit-keyframes bounce {
-    from {
-      transform: translateY(0);
+    0% {
+        transform: translateY(0px) scale(2);
     }
-    to {
-      transform: translateY(-70%);
-    }
+      50%{
+          transform: translateY(-25%);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
   }
 .side {
     width: 100%;
