@@ -19,6 +19,7 @@ body > div {
 }
 .preload{
     position: fixed;
+    z-index: 3;
     top: 0;
     height: 100vh;
     width: 100vw;
@@ -141,7 +142,7 @@ body > div {
     opacity: 0.4;
 }
 .text{
-    position: fixed;
+    position: absolute;
     top: 45%;
     left: 0;
     font-size: 4em;
