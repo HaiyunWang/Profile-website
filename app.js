@@ -133,17 +133,21 @@ function showCards(n){
 window.addEventListener('load',()=>{
     var preload = document.querySelector('.preload');
     preload.classList.add('preload-finish');
+    document.body.style.overflowY = "visible";
+    enableScroll();
 })
 window.onunload = function(e){
     window.scrollTo(0,0);
 }
+disableScroll();
+document.body.style.overflowY = "hidden";
 function preventDefault(e){
     e.preventDefault();
-}
-
-function disableScroll(){
-    document.body.addEventListener('touchmove', preventDefault, { passive: false });
-}
-function enableScroll(){
-    document.body.removeEventListener('touchmove', preventDefault);
-}
+  }
+  
+  function disableScroll(){
+      document.body.addEventListener('touchmove', preventDefault, { passive: false });
+  }
+  function enableScroll(){
+      document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+  }
