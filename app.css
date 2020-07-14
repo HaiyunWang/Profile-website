@@ -6,6 +6,7 @@
 body,html{
     overflow-x: hidden;
     overflow-y: scroll;
+    height: 100vh;
 }
 body > div {
     transform: translate3d(0,0,0);
