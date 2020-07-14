@@ -134,3 +134,6 @@ window.addEventListener('load',()=>{
     var preload = document.querySelector('.preload');
     preload.classList.add('preload-finish');
 })
+window.onunload = function(e){
+    window.scrollTo(0,0);
+}
