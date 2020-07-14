@@ -133,6 +133,7 @@ function showCards(n){
 window.addEventListener('load',()=>{
     var preload = document.querySelector('.preload');
     preload.classList.add('preload-finish');
+    window.scrollTo(0,0);
     document.body.style.overflowY = "visible";
     enableScroll();
 })
