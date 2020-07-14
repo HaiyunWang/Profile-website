@@ -1,7 +1,12 @@
+@font-face {
+    font-family:Lora-regular;
+    src:url('Lora/static/Lora-Regular.ttf')
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family:Lora-regular;
 }
 body,html{
     overflow-x: hidden;
