@@ -137,3 +137,13 @@ window.addEventListener('load',()=>{
 window.onunload = function(e){
     window.scrollTo(0,0);
 }
+function preventDefault(e){
+    e.preventDefault();
+}
+
+function disableScroll(){
+    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+}
+function enableScroll(){
+    document.body.removeEventListener('touchmove', preventDefault);
+}
